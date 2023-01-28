@@ -11,3 +11,11 @@ body {
     height: 600px;
     background-color: white;
 }
+
+.row {
+    display: flex;
+}
+
+.cell {
+    border: 1px solid black;
+}

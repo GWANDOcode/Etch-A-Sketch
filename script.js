@@ -3,7 +3,6 @@ const drawingBoard = document.querySelector(".drawing_board");
 let rowNumb = 16;
 let columnNumb = 16;
 
-
 //Creates the rows and columns to the drawingboard
 for (i = 0; i < columnNumb; i++) {
 
@@ -19,3 +18,15 @@ for (i = 0; i < columnNumb; i++) {
 
     console.log("I AM ROW");
 };
+
+let pixelWidth = drawingBoard.offsetWidth/rowNumb;
+let pixelHeight = drawingBoard.offsetHeight/columnNumb; 
+
+const cells = document.querySelectorAll(".cell");
+
+cells.forEach(cell => {
+    cell.style.width = pixelWidth + "px";
+    cell.style.height = pixelHeight + "px";
+});
+
+
