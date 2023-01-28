@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: gray;
+}
+
+.drawing_board {
+    width: 600px;
+    height: 600px;
+    background-color: white;
+}
