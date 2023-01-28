@@ -19,6 +19,7 @@ for (i = 0; i < columnNumb; i++) {
     console.log("I AM ROW");
 };
 
+//Sizing for each pixel
 let pixelWidth = drawingBoard.offsetWidth/rowNumb;
 let pixelHeight = drawingBoard.offsetHeight/columnNumb; 
 
@@ -29,4 +30,18 @@ cells.forEach(cell => {
     cell.style.height = pixelHeight + "px";
 });
 
+//Colorchange on hover
+let mouseDown = false;
+drawingBoard.onmousedown = () => {mouseDown = true};
+drawingBoard.onmouseup = () => {mouseDown = false};
+
+cells.forEach(cell => {
+
+    cell.addEventListener("mouseover", () => {
+        if (mouseDown === true) {
+        cell.style.backgroundColor = "red";
+        };
+    });
+
+});
 
