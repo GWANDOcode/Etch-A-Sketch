@@ -1,6 +1,5 @@
 const drawingBoard = document.querySelector(".drawing_board");
 
-let pencilColor = "red";
 let gridSize = 16; // gridSize x gridSize e.g(16x16)
 
 //Creates the rows and columns to the drawingboard
@@ -28,6 +27,25 @@ const cells = document.querySelectorAll(".cell");
 cells.forEach(cell => {
     cell.style.width = pixelWidth + "px";
     cell.style.height = pixelHeight + "px";
+});
+
+//Pencil colorchange
+const colorPicker = document.querySelector(".colorPicker");
+const blackPencil = document.querySelector(".blackPencil");
+const eraser = document.querySelector(".eraser");
+
+let pencilColor = blackPencil.value;
+
+blackPencil.addEventListener("click", () => {
+    pencilColor = blackPencil.value;
+});
+
+eraser.addEventListener("click", () => {
+    pencilColor = eraser.value;
+});
+
+colorPicker.addEventListener("input", () => {
+    pencilColor = colorPicker.value;
 });
 
 //Colorchange on hover
