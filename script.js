@@ -1,7 +1,7 @@
 const drawingBoard = document.querySelector(".drawing_board");
 
 let pencilColor = "red";
-let gridSize = 16;
+let gridSize = 16; // gridSize x gridSize e.g(16x16)
 
 //Creates the rows and columns to the drawingboard
 for (i = 0; i < gridSize; i++) {
@@ -45,3 +45,12 @@ cells.forEach(cell => {
 
 });
 
+//Slider
+const slider = document.querySelector(".slider");
+const sliderValue = document.querySelector(".sliderValue");
+
+sliderValue.textContent = slider.value;
+
+slider.addEventListener("input", () => {
+    sliderValue.textContent = slider.value;
+});
