@@ -17,7 +17,6 @@ html {
 }
 
 body {
-    height: 100vh;
     margin-top: -1rem;
     margin-bottom: 3rem;
     display: flex;
@@ -28,8 +27,8 @@ body {
 }
 
 .drawing_board {
-    width: 600px;
-    height: 600px;
+    width: 550px;
+    height: 550px;
     border: 0.03rem solid #090C02;
     background-color: white;
     overflow: hidden;
@@ -128,3 +127,24 @@ button:hover,
     font-size: 1.3rem;
 }
 
+@media (min-width: 871px) {
+    body {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 870px) {
+    body {
+        flex-direction: column;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .settings {
+        width: 550px;
+    }
+
+    .title {
+        margin-bottom: 1rem;
+    }
+}

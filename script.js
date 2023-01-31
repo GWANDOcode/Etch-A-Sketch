@@ -138,7 +138,7 @@ function mouseCellEventHandler() {
 const slider = document.querySelector(".slider");
 const sliderValue = document.querySelector(".sliderValue");
 
-sliderValue.textContent = slider.value;
+sliderValue.textContent = `${slider.value} x ${slider.value}`;
 
 slider.addEventListener("input", () => {
     sliderValue.textContent = slider.value;
