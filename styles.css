@@ -16,7 +16,7 @@ body {
     display: flex;
 }
 
-.cell {
+.gridLines {
     border: 1px solid black;
 }
 

@@ -99,5 +99,14 @@ slider.addEventListener("input", () => {
     resizePixel();
 });
 
+//Grid on/ off
+const gridButton = document.querySelector(".gridButton");
+
+gridButton.addEventListener("click", () => {
+    cells.forEach(cell => {
+        cell.classList.toggle("gridLines");
+    })
+});
+
 buildDrawingBord();
 resizePixel();
