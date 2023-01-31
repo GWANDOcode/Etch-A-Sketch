@@ -116,6 +116,7 @@ function buttonActveColorBackground() {
 
 //DRAWING: Colorchange on hover
 let mouseDown = false;
+
 drawingBoard.onmousedown = () => {
     mouseDown = true;
     mouseCellEventHandler();
@@ -133,7 +134,7 @@ function mouseCellEventHandler() {
 
     });
 };
-
+  
 //Slider
 const slider = document.querySelector(".slider");
 const sliderValue = document.querySelector(".sliderValue");
