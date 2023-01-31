@@ -190,5 +190,6 @@ gridButton.addEventListener("click", () => {
     buttonActveColorBackground();
 });
 
+// Start up 
 buildDrawingBord();
 resizePixel();

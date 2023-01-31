@@ -1,5 +1,14 @@
+@font-face {
+    font-family: NotoSansJp;
+    src: url(./Fonts/Noto_Sans_JP/NotoSansJP-Regular.otf);
+}
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    font-family: NotoSansJp;
 }
 
 body {
@@ -10,7 +19,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    background-color: #E6EED6;
+    background-color: #F6F9F1;
 }
 
 .drawing_board {
