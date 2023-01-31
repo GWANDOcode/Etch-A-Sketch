@@ -107,6 +107,11 @@ function buttonActveColorBackground() {
         colorPicker.classList.remove("activeColor");
     };
 
+    if(gridStatus === 1) {
+        gridButton.classList.add("activeColor");
+    } else if(gridStatus === 0) {
+        gridButton.classList.remove("activeColor");
+    };
 };
 
 //DRAWING: Colorchange on hover
@@ -141,7 +146,7 @@ slider.addEventListener("input", () => {
     deleteDrawingBord();
     buildDrawingBord();
     resizePixel();
-    gridUp();
+    gridCheck();
 });
 
 //Clear Board 
@@ -156,29 +161,33 @@ clear.addEventListener("click", () => {
 
 //Grid on/ off
 const gridButton = document.querySelector(".gridButton");
-let gridStatus = false;
+let gridStatus = 0;
 
 function gridUp() {
-    if(gridStatus === true) {
-        cells.forEach(cell => {
-            cell.classList.toggle("gridLines");
-        })
-    };
+    cells.forEach(cell => {
+        cell.classList.add("gridLines");
+    });
 };
 
-function gridCheck() {
-    if(gridStatus === false) {
-        gridStatus = true;
+function gridDown() {
+    cells.forEach(cell => {
+        cell.classList.remove("gridLines");
+    });
+};
+
+function gridCheck() { 
+    if(gridStatus === 1) {
         gridUp();
-    } else if (gridStatus === true) {
-        cells.forEach(cell => {
-            cell.classList.toggle("gridLines");
-        });
+    } else if (gridStatus > 1 || gridStatus === 0) {
+        gridStatus = 0;
+        gridDown();
     };
 };
 
 gridButton.addEventListener("click", () => {
+    gridStatus++; //look gridCheck(), increments up to 1 and if over sets back to 0, acts as a switch
     gridCheck();
+    buttonActveColorBackground();
 });
 
 buildDrawingBord();
