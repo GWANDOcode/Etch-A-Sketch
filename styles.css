@@ -3,13 +3,22 @@
 }
 
 body {
-    background-color: gray;
+    height: 100vh;
+    margin-top: -1rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    background-color: #E6EED6;
 }
 
 .drawing_board {
     width: 600px;
     height: 600px;
+    border: 0.2rem solid #A72608;
     background-color: white;
+    overflow: hidden;
 }
 
 .row {
@@ -20,6 +29,42 @@ body {
     border: 1px solid black;
 }
 
+/* SETTINGS */
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    justify-content: center;
+}
+
+/* BUTTONS */
+.button_container {
+    display: flex;
+    width: 250px;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+button,
+input {
+    width: 80px;
+    height: 80px;
+}
+
+button > img {
+    width: 100%;
+}
+
+button:hover,
+input:hover {
+    background-color: #BBC5AA;
+}
+
+.activeColor {
+    background-color: #DDE2C6;
+}
+
+/* SLIDER */
 .slidecontainer {
     width: 250px;
 }

@@ -53,19 +53,63 @@ const eraser = document.querySelector(".eraser");
 
 let pencilColor = blackPencil.value;
 
+let blackOn = false;
+let eraserOn = false;
+let colorPickerOn = false;
+
 blackPencil.addEventListener("click", () => {
     pencilColor = blackPencil.value;
+
+    blackOn = true;
+    eraserOn = false;
+    colorPickerOn = false;
+
+    buttonActveColorBackground();
 });
 
 eraser.addEventListener("click", () => {
     pencilColor = eraser.value;
+
+    blackOn = false;
+    eraserOn = true;
+    colorPickerOn = false;
+
+    buttonActveColorBackground();
 });
 
 colorPicker.addEventListener("input", () => {
     pencilColor = colorPicker.value;
+
+    blackOn = false;
+    eraserOn = false;
+    colorPickerOn = true;
+
+    buttonActveColorBackground();
 });
 
-//Colorchange on hover
+//Button active background
+function buttonActveColorBackground() {
+    if(blackOn === true) {
+        blackPencil.classList.add("activeColor");
+    } else if(blackOn === false) {
+        blackPencil.classList.remove("activeColor");
+    };
+
+    if(eraserOn === true) {
+        eraser.classList.add("activeColor");
+    }  else if(eraserOn === false) {
+        eraser.classList.remove("activeColor");
+    };
+
+    if(colorPickerOn === true) {
+        colorPicker.classList.add("activeColor");
+    }  else if(colorPickerOn === false) {
+        colorPicker.classList.remove("activeColor");
+    };
+
+};
+
+//DRAWING: Colorchange on hover
 let mouseDown = false;
 drawingBoard.onmousedown = () => {
     mouseDown = true;
