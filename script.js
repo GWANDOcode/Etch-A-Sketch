@@ -97,15 +97,44 @@ slider.addEventListener("input", () => {
     deleteDrawingBord();
     buildDrawingBord();
     resizePixel();
+    gridUp();
+});
+
+//Clear Board 
+const clear = document.querySelector(".clear");
+
+clear.addEventListener("click", () => {
+    deleteDrawingBord();
+    buildDrawingBord();
+    resizePixel();
+    gridCheck();
 });
 
 //Grid on/ off
 const gridButton = document.querySelector(".gridButton");
+let gridStatus = false;
+
+function gridUp() {
+    if(gridStatus === true) {
+        cells.forEach(cell => {
+            cell.classList.toggle("gridLines");
+        })
+    };
+};
+
+function gridCheck() {
+    if(gridStatus === false) {
+        gridStatus = true;
+        gridUp();
+    } else if (gridStatus === true) {
+        cells.forEach(cell => {
+            cell.classList.toggle("gridLines");
+        });
+    };
+};
 
 gridButton.addEventListener("click", () => {
-    cells.forEach(cell => {
-        cell.classList.toggle("gridLines");
-    })
+    gridCheck();
 });
 
 buildDrawingBord();
